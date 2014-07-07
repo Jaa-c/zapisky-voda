@@ -1,0 +1,239 @@
+\documentclass[report,11pt]{article}
+
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage[fleqn]{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc} 
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{xifthen}
+\usepackage{tabularx}
+\usepackage{xcolor}
+
+\hypersetup{
+    bookmarks=true,         	% show bookmarks bar?
+    unicode=true,			% non-Latin characters in Acrobat’s bookmark
+    colorlinks=true,       	% false: boxed links; true: colored links
+    linkcolor=blue,		% color of internal links (change box color with linkbordercolor)
+}
+
+
+\setcounter{secnumdepth}{0}
+\titlespacing*{\subsubsection}{0em}{0em}{0em}
+\setlength\parindent{0pt}
+
+\title{Voda}
+\author{Dan Princ}
+
+\titleformat*{\section}{\Huge\bfseries}
+\titleformat*{\subsection}{\LARGE\bfseries}
+\titleformat*{\subsubsection}{\large\bfseries}
+
+\newcommand{\rok}{\clearpage\section}
+\newcommand{\akce}{\vspace{3em}\subsection}
+\newcommand{\reka}{\subsubsection}
+\newcommand{\datum[1]}{%
+	\addtocontents{toc}{\hspace{1.5em}#1\par}%
+	#1%
+}
+
+\newcommand{\info[3]}{%
+	\vspace{1.5em}\hspace{-.5em}\begin{tabularx}{0.6\textwidth}{X | l X}%
+	\parbox[c]{\hsize}{\reka{#1}} & #2 & \textcolor{blue!40!black}{#3} \\%
+	\end{tabularx}%
+}
+
+\newcommand{\usek}[2][]{%
+	\vspace{0.3em}%
+	\textcolor{red!40!black}{%
+	\ifthenelse{\isempty{#1}}{\\Úsek: #2}{\\Nasedačka: #1\\Vysedačka: #2}%
+	}%
+	\vspace{0.3em}%
+}
+
+\newcommand{\cara}{%
+	\begin{center}\line(1,0){350}\end{center}%
+}
+
+\begin{document}
+\maketitle
+\clearpage
+\tableofcontents
+
+\rok{2013}
+\akce{Piemnot a Tessin}
+\datum[18.5. - 25.5.]
+
+Zájezd se Šerpou.
+
+\info[Vorderrhein]{18.5.}{nižší stav}
+\usek[Ilanz - 46.780564, 9.231082]{soutok s Hinterrheinem}
+
+\info[Glenner]{19.5.}{vyšší stav}
+\usek[pod jezem - 46.724024, 9.20368]{Vorderrhein}
+
+Vyšší stav, proto sme nasedali pod jezem. Kontinuální WW3, dvě těžší místa WW4, nejsou vidět ze silnice - úzký místo pod mostem se solidníma válcema (čouhali z toho nějaký kusy betonu) a o pár set metrů dál peřej s dvěma válcema. Vhodný prohlídnout.
+
+\info[Albula]{20.5.}{nízký stav}
+\usek[Surava - 46.664736, 9.612557]{Tiefencastel - 46.661139, 9.582986}
+
+Walderschlucht, nižší voda, cca hodina. Zadarmo.
+
+\info[Moesa]{20.5.}{$\sim80 m^3/s$, vysoký stav}
+\usek[Sorte - 46.293057, 9.180048]{San Vittore - 46.237744, 9.116263}
+
+Hodně velkej stav, první 3km WW4+, zbytek WW3+ se zbytkem zájezdu. Na nasedačce šla voda obouma korytama pod mostem a peřej pod mostem byla zalitá, slušný válce. Nejtěžší místo je cca 300m od nasedačky, peřej končí velkym válcem přes celou řeku, ale pouštěl (měli sme 2 krysy), lepší průjezd byl vlevo u břehu. Pod válcem laguna na pochytání. Následuje jez, průjezd prostředkem. Po pár set metrech prudká zatáčka doprava, nejde moc prohlídnout. Za týhle vody nejlepší průjezd vpravo těsně u břehu pod větvema. Následuje několik stupňů s válcema, lepší průjezd vpravo, za třetím stupněm přejezd doleva. Zbytek už byl na oči.
+
+\info[Verzasca]{21.5.}{$\sim35m^3/s$, vyšší stav}
+\usek{střední}
+
+Velkej stav, nandaváme 100m pod mostem pod nepěknym válcem. První peřej dáváme vpravo, dál většinu prohlížíme. Pod některejma stupněma jsou slušný válce, vhodnější průjezd je blízko břehu :) Těžší je peřej se dvěma stupni u konce. Lajna je středem, ale chce to rozestupy, když někdo zůstane ve válci :) Všichni zvedaj, Mišu plave. Následuje stupeň s dlouhym rychlym jazykem pod ním, na konci to žene pod šutr vpravo. Nájezd středem, potom hodně doleva. Tady končíme, dochází morál.
+
+\info[Sesia]{22.5.}{střední stav}
+\usek[nad Little Canada]{nějaký město dole :)}
+
+Spodní úsek společně s raftama, WW3, velký vlny. Začínáme malym kaňonkem WW4, jede se levym korytem, vlevo to žene na skálu, ale všechno odtejká. Pohodový ježdění na zablbnutí na vlnách.
+
+\info[Mastallone]{22.5.}{střední stav}
+\usek[pod kaňonem - 45.841950, 8.252565]{do vesnice, kde začíná nějakej brutální kaňon}
+
+Nasedáme pod kaňonem do kterýho nevidíme a vstupenka neni vůbec zadarmo. Normálně se prej jezdí, ale nechce se nám to prohlížet. Dál je to WW3+, všechno na oči, pohodový poježdění. Končíme ve vesnici, kde to mizí do kaňonu. Úsek je cca na hodinu. Spíme na parkovišti cca 20km proti proudu, ráno dáváme na zablbnutí Landwasser.
+
+\info[Sorba]{23.5.}{nižší stav}
+\usek[Rassa - 45.769395, 8.016367]{vpravo za kamennym mostem nad řekou}
+
+Úsek 2.5 km, WW4+, 2-3 hodiny s prohlíženim. Nasedáme po šestý a neznáme to, takže doufáme, že z toho pude vylezt. Většina úseku je blízko u silnice, takže pohoda. Prohlížíme pár míst, zejména kaňonek kousek pod začátkem, ale všechno jedem.  Vysedáme o chvíli dřív, protože se blíží tma a nechceme spadnout do Devils slide :)
+
+\info[Adda]{24.5.}{?}
+\usek{netušim}
+
+Kontinuální cca 3km dlouhej úsek WW3, nějakej normální stav...
+
+\info[Ötz + Inn]{25.5.}{190cm Tumpen}
+\usek{spodní}
+
+Cestou domu dáváme spodní Ötz do Innu až na vysedačku Innu. Highlight sou 2 rafťáci na nafukovací palmě uprostřed Innu.
+
+\akce{Balkán}
+\datum[12.7. - 28.7.]
+
+Výlet na Balkán, příležitostná voda.
+
+\info[Korana]{13.7.}{malý stav}
+\usek[Slunj, $N 45^{\circ}7.2354'~E 15^{\circ}35.3268'$]{most, $N 45^{\circ}15.1602'~E 15^{\circ}32.7486'$}
+
+Na začátku WW2+, dál hodně stupňů do 2m, hezká krajina, želvy. Za hodně malý vody 6 hodin. Možnost spaní na vysedačce, louka u řeky.
+
+\info[Zrmanja]{15.7.}{malý stav}
+\usek[Raft. centrum, $N 44^{\circ}9.6084'~E 15^{\circ}51.2148'$]{Obrovac, $N 44^{\circ}11.8062'~E 15^{\circ}46.1178'$}
+
+Klasika, drop-pool-drop charakter, do WW3, cca 3 hod. Několik km od začátku 12m vodopád, za malý vody bez šance. Jinak něolik hezkejch stupňů, jeden 4m, ke konci 6m. Hezká krajina, platí se nějaký splutí. 
+
+\info[Neretva]{17.7.}{střední stav}
+\usek[Kemp, 43.523582, 18.081626]{most před Konjicem, 43.626343, 18.005236}
+
+Klasika v Bosně, WW3, nádhernej kaňon, několik trochu těžších peřejí, ale všechno jde jet na oči. Za splutí se neplatí, i když se na místě pohybujou ``výběrčí''. Přejeli sme most a ve městě už se blbě vysedá. Vhodná vysedačka je most ještě před vjezdem do města. Je to tak na 3 hodiny.
+
+\info[Tara]{19. - 20.7.}{střední stav}
+\usek[Žabljak, 43.128458, 19.309996]{most na hranici s Bosnou, Šćepan Polje, 43.348772, 18.845214}
+
+Černá Hora, úsek 68km, za slušný vody se dá stihnout i za jeden den, nicméně pendl je přes 100km a přes velký kopce. Případně se jezdí 2 dny. Platí se slušná pálka za splutí (45E kajak, 75E Outside). Jinak nádherná krajina, WW2-3, posledních cca 15km je až WW3+.\\
+Spali sme asi 20km od konce v kempu na pravý straně v Bosně, dobře tam vaří :)
+
+
+\rok{2014}
+
+\akce{Rakousko I}
+\datum[12.4. - 13.4.]
+
+Jarní Rakousko se Štěpánem, Kubou a Ondrou. Ještě skoro nic neteklo, takže sme dali Kopáč a Lammer, kterej byl oficiálně zavřenej.
+
+\info[Koppentraun]{12. a 13.4.}{TODO}
+\usek[nádraží Bad Ausse]{most přes řeku na L547}
+
+Klasika, 8km, až WW4. nižší stav, ale všechno v pohodě jetelný, katarakty v podstatě zadarmo.
+
+\info[Lammer]{12. a 13.4.}{60cm Obergau}
+\usek{Lammeröffen}
+
+Provez nás Max Eberl, kterýho sme potkali na Koppentraunu. Nižší stav, dost na pohodu. Ráno sme potkali  pražáky (Kuba Suchý,...) a dali sme 2 jízdy, pak ještě jeden Kopáč.
+
+\akce{Rakousko II}
+\datum[7.6. - 9.6.]
+
+Vydařenej zájezd s Kubou (rozbitá loď) a Honzou (vyvrknutej kotník a sádra v Lienzu v nemocnici). Všude hrozně moc vody, takže sme nedali ani Virgen, ani Tauernbach, ani Tunel nebo Wasserfallstrecke.
+
+\info[Lammer]{7.6.}{70cm Obergau}
+\usek{Lammeröffen}
+
+Zastávka cestou na Isel, spali sme pod mostem a ráno dali pár jízd, hezká voda, všechno na pohodu.
+
+\info[Lieser]{7.6.}{170cm Spittal}
+\usek[pod dálničním mostem pod Gmündem]{vodočet nad Spittalem}
+
+Neznali sme to, takže sme se trochu báli popisu v DKV, kde psali extrémní spád, ale nakonec to bylo úplně na pohodu kontinuální WW3, poslední cca kilometr byl WW3+. Pohodová projíždka, necelý 2 hodiny.
+
+\info[Isel]{8.6.}{100cm Hinterbichl}
+\usek[parkoviště Hinterbichl]{most Wallhorn}
+
+6km pěkný kontinuální WW3+ vody, sneslo by to určitě i víc vody. Pěkná je peřejka nad mostem, kde se končí. Asi by se dalo jet na další most o cca 1km níž, potřeba někdy zkusit.
+
+\info[Defereggenbach]{8.6.}{83cm Hopfgarten}
+\usek[most nad St. Jakobem 46.911488, 12.300187]{most 1km pod St. Jakobem}
+
+Hodně solidní stav, cca 34 kubíků, jeli sme jenom já a Kuba. Hodně kontinuální 4km sme dali asi za 16 minut, asi tak WW4+. Na první jízdu sme se trochu báli a šolíchali to u břehu, ale všechno se dalo na pohodu, akorát tam člověk nechtěl zaplavat. Ve vesnici něco staví a sou tam lana přes řeku. 
+
+\info[Defereggenbach]{9.6.}{$\sim$80cm Hopfgarten}
+\usek{Horní}
+
+Nasedli sme pod vodopádem a chtěli sme vysedat na silničním mostu. Celý sme to prošli a nikde žádný stromy, celý to teklo docela z kopce, asi 3 - 4 km WW4+. Po cca 300m Kuba zaplaval a nechytli sme loď, tu sme dostihli až přesně na vysedačce s dírou na špičce i na zádi. Tim sme skončili tenhle vydařenej zájezd, nicméně úsek za sjetí určitě stojí, tenhle stav byla taková ideální střední voda. Dá se jet i úsek na vodopádem, ale obtížně by se to prohlíželo.
+
+
+\akce{Isel a okolí}
+\datum[27.6. - 6.7.]
+
+Isel s rodinou, kde se měl připojit Kuba a měli sme dát něco solidnějšího, bohužel mu to nevyšlo. Naštěstí sem tam potkal partičku z Čech, který sem vzal aspoň na Standard na Defáči, horní Isel a na úsek pod kataraktem.
+
+\info[Lammer]{28.6.}{50cm Obergau}
+\usek{Lammeröffen}
+
+Zastávka cestou na Isel, opravdu malá voda, spodní hranice pro jetí. Taťka si zaplaval na peřeji pod kataraktem a přenes poslední místo, který je za tohodle stavu fakt úzký, takže jenom jedna jízda...
+
+\info[Lieser]{28.6.}{158cm Spittal}
+\usek[pod dálničním mostem pod Gmündem]{vodočet nad Spittalem}
+
+Docela malá voda, vyhejbání šutrům, pohodový WW3. Sjel to i Jirka bez problémů.
+
+\info[Möll]{29.6.}{128cm Winklern}
+\usek{Klasika od jezu do Winklernu}
+
+Klasika s nafukovačkama, WW2 - 3, 2h.
+
+\info[Gail]{30.6.}{93cm Mauthen}
+\usek[Birnbaum]{Mauthen}
+
+Asi největší voda na Gailu co sme měli, pohodový svezení WW2+.
+
+
+\info[Defereggenbach]{30.6.}{76cm Hopfgarten}
+\usek{Standardstrecke}
+
+Standardstrecke za docela hezký vody, až WW4, ale všechno na pohodu. Honza na konci na dojezdu přišel o pádlo a krysil, pádlo už sme nenašli, odplavalo po proudu. Jinak v pohodě. Večer sme dali eště Isel z Hubenu.
+
+\info[Isel]{1.7.}{95cm Hinterbichl}
+\usek{horní a spodek od kataraktu}
+
+Na pohodu svezení, ale docela málo vody, blízko spodního limitu.\\
+Odpoledne sme to nahodili asi 500m pod kataraktem, hezký svezení WW3+, velký vlny, ale žádný větší válce. Za tohodle stavu (asi 270cm Lienz) by to šlo nahodit i těsně pod katarakt, ale na to sme byli ve slabší sestavě.
+
+\info[Gail]{2.7.}{66cm Maria Luggau}
+\usek[Maria Luggau]{Birnbaum}
+
+Poprví sem jel horní Gail, docela dobrej stav, ale mohlo by bejt i víc. Pár set metrů po startu je jedno obtížnější místo s velkym rozdělovákem a válcem před nim, ale jinak je to WW3. Části sou v kaňonu, je třeba dávat pozor na spadlý stromy. Jeden zával přenášíme, jinak je to ale dobrý. Ke konci úseku se objeví 2 těžší peřeje, ale na oči. S občasnym prohlíženim jedeme cca 3.5 hodiny, ale dalo by se to za 2.
+\cara
+Další den Gail ještě jednou s nafukovačkama, potom jezdíme už jenom spodní Isel a cestou dobu spodní Saalach, kterej fakt už jet nechci.
+
+
+\end{document}
