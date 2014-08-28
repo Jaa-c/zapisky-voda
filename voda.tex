@@ -11,6 +11,7 @@
 \usepackage{xifthen}
 \usepackage{tabularx}
 \usepackage{xcolor}
+\usepackage{glossaries}
 
 \hypersetup{
     bookmarks=true,         	% show bookmarks bar?
@@ -18,7 +19,6 @@
     colorlinks=true,       	% false: boxed links; true: colored links
     linkcolor=blue,		% color of internal links (change box color with linkbordercolor)
 }
-
 
 \setcounter{secnumdepth}{0}
 \titlespacing*{\subsubsection}{0em}{0em}{0em}
@@ -39,9 +39,20 @@
 	#1%
 }
 
-\newcommand{\info[3]}{%
+
+\makeglossaries
+
+
+\newcommand*{\newterm}[2][]{%
+\newglossaryentry{#2}%
+{name={#2},description={\nopostdesc}}}
+
+\newcommand{\mygls}[1]{\ifglsentryexists{#1}{\gls{#1}}{\textcolor{blue}{\underline{#1}}}}
+%\newcommand{\mygls}[1]{\ifglsentryexists{#1}{\gls{#1}}{\newterm{#1}\gls{#1}}}
+
+\newcommand*{\info[3]}{%
 	\vspace{1.5em}\hspace{-.5em}\begin{tabularx}{0.6\textwidth}{X | l X}%
-	\parbox[c]{\hsize}{\reka{#1}} & #2 & \textcolor{blue!40!black}{#3} \\%
+	\parbox[c]{\hsize}{\reka{\mygls{#1}}} & #2 & \textcolor{blue!40!black}{#3} \\%
 	\end{tabularx}%
 }
 
@@ -57,10 +68,14 @@
 	\begin{center}\line(1,0){350}\end{center}%
 }
 
+
 \begin{document}
 \maketitle
 \clearpage
 \tableofcontents
+
+\clearpage
+\printglossaries
 
 \rok{2013}
 \akce{Piemnot a Tessin}
@@ -111,7 +126,7 @@ Nasedáme pod kaňonem do kterýho nevidíme a vstupenka neni vůbec zadarmo. No
 
 Kontinuální cca 3km dlouhej úsek WW3, nějakej normální stav...
 
-\info[Ötz + Inn]{25.5.}{190cm Tumpen}
+\info[Otz]{25.5.}{190cm Tumpen} %otz + inn
 \usek{spodní}
 
 Cestou domu dáváme spodní Ötz do Innu až na vysedačku Innu. Highlight sou 2 rafťáci na nafukovací palmě uprostřed Innu.
@@ -139,8 +154,11 @@ Klasika v Bosně, WW3, nádhernej kaňon, několik trochu těžších peřejí, 
 \info[Tara]{19. - 20.7.}{střední stav}
 \usek[Žabljak, 43.128458, 19.309996]{most na hranici s Bosnou, Šćepan Polje, 43.348772, 18.845214}
 
-Černá Hora, úsek 68km, za slušný vody se dá stihnout i za jeden den, nicméně pendl je přes 100km a přes velký kopce. Případně se jezdí 2 dny. Platí se slušná pálka za splutí (45E kajak, 75E Outside). Jinak nádherná krajina, WW2-3, posledních cca 15km je až WW3+.\\
+Černá Hora, úsek 68km, za slušný vody se dá stihnout i za jeden den, nicméně pendl je přes 100km a přes velký kopce. Byli sme jenom jedno auto, takže sme zaplatili Defendera, co nás 4 vzal i s loděma na nasedačku za 100E. Řeku sme nakonec dali jako dvou denní výlet. Platí se slušná pálka za splutí (45E kajak, 75E Outside). Jinak nádherná krajina, WW2-3, posledních cca 15km je až WW3+.\\
 Spali sme asi 20km od konce v kempu na pravý straně v Bosně, dobře tam vaří :)
+
+\cara
+Cestou zpátky sme dali spodní Isel za stavu kolem 300cm a Möll asi za 130cm.
 
 
 \rok{2014}
@@ -150,7 +168,7 @@ Spali sme asi 20km od konce v kempu na pravý straně v Bosně, dobře tam vař�
 
 Jarní Rakousko se Štěpánem, Kubou a Ondrou. Ještě skoro nic neteklo, takže sme dali Kopáč a Lammer, kterej byl oficiálně zavřenej.
 
-\info[Koppentraun]{12. a 13.4.}{TODO}
+\info[Koppentraun]{12. a 13.4.}{105cm Obertraun}
 \usek[nádraží Bad Ausse]{most přes řeku na L547}
 
 Klasika, 8km, až WW4. nižší stav, ale všechno v pohodě jetelný, katarakty v podstatě zadarmo.
@@ -163,7 +181,7 @@ Provez nás Max Eberl, kterýho sme potkali na Koppentraunu. Nižší stav, dost
 \akce{Rakousko II}
 \datum[7.6. - 9.6.]
 
-Vydařenej zájezd s Kubou (rozbitá loď) a Honzou (vyvrknutej kotník a sádra v Lienzu v nemocnici). Všude hrozně moc vody, takže sme nedali ani Virgen, ani Tauernbach, ani Tunel nebo Wasserfallstrecke.
+Vydařenej zájezd s Kubou (rozbitá loď) a Honzou (vyvrknutej kotník a sádra v Lienzu v nemocnici). Všude hrozně moc vody, takže sme nedali ani Virgen, ani Tauernbach, ani Tunel nebo Wasserfallstrecke. Byli sme taky prohlídnout Untertalbach, měli sme dobrej stav, ale klukům se do toho nechtělo... já bych dal. Takže v podstatě sme nic nejeli, ale rozbili loď a navštívili nemocnici...
 
 \info[Lammer]{7.6.}{70cm Obergau}
 \usek{Lammeröffen}
@@ -206,7 +224,7 @@ Zastávka cestou na Isel, opravdu malá voda, spodní hranice pro jetí. Taťka 
 
 Docela malá voda, vyhejbání šutrům, pohodový WW3. Sjel to i Jirka bez problémů.
 
-\info[Möll]{29.6.}{128cm Winklern}
+\info[Moll]{29.6.}{128cm Winklern}
 \usek{Klasika od jezu do Winklernu}
 
 Klasika s nafukovačkama, WW2 - 3, 2h.
@@ -234,6 +252,61 @@ Odpoledne sme to nahodili asi 500m pod kataraktem, hezký svezení WW3+, velký 
 Poprví sem jel horní Gail, docela dobrej stav, ale mohlo by bejt i víc. Pár set metrů po startu je jedno obtížnější místo s velkym rozdělovákem a válcem před nim, ale jinak je to WW3. Části sou v kaňonu, je třeba dávat pozor na spadlý stromy. Jeden zával přenášíme, jinak je to ale dobrý. Ke konci úseku se objeví 2 těžší peřeje, ale na oči. S občasnym prohlíženim jedeme cca 3.5 hodiny, ale dalo by se to za 2.
 \cara
 Další den Gail ještě jednou s nafukovačkama, potom jezdíme už jenom spodní Isel a cestou dobu spodní Saalach, kterej fakt už jet nechci.
+
+
+\akce{Rakousko III}
+\datum[22.8. - 26.8.]
+
+Rakousko s Kubou, Patem a Šuhym, směr Inn, Ötz, Isel.
+
+
+\info[Inn]{22.8.}{25 $m^{3}_{s}$}
+\usek{Giarsun + Ardez, nasedačka vesnice Giarsun, vysedačka $N 46^{\circ}47.0568'~E 10^{\circ}15.1692'$}
+
+Giarsun je na pohodu, za tohodle stavu WW3-4, asi dvě místa sme prohlídli, jinak na oči. Kuba to jel prej i za 80 kubíků, což bude jiná řeka :) Dojede se k mostu, tam začíná Ardez, kterej je o trochu těžší. Stav co sme měli vypadal docela optimálně, takovej střed. V půlce se přenáší na levym břehu cca 100m nejetelná zasifonovaná peřej. Pod tim je těžší místo, který se jede těsně zleva mezi šutrama, potom pořád vlevo.Na konci sou dva stupně, první nižší se jede vlevo, druhej (cca 1.5m) se jede středem. Pak už se to zklidňuje a je to na oči. Když se u vody vlevo objeví silnice, blíží se konec. S občasnym prohlíženim cca 2 hodiny.
+
+
+\info[Inn]{22.8.}{260cm Kajetan Brücke}
+\usek{Tösener schlucht, nasedačka Tösens 47.007214, 10.598180, vysedačka Ried vlevo před mostem}
+
+Pěknej střední stav, 3 těžší peřeje, trochu těžší a svižnější než Imster schlucht, ale všechno na oči. Celkově je to všechno o trochu větší, má to sílu, ale na pohodu. 30 min.
+
+\info[Pitzbach]{23.8}{45cm Wenns}
+\usek[most Wiese 47.115556, 10.795853]{47.129180, 10.768366}
+
+U vysedačky je plácek u řeky, kde sme spali. Nasedali sme před nejtěžším úsek u mostu ve Wiese, ale dá se jezdit i o 2km vejš. Stav 45 cm už je spíš nižší, hodně se berou šutry a nedá se jim moc vyhnout, nicméně na rozumný sjetí to stačí. 3-5 cm navíc by byly asi optimální. Vhodný předem prohlídnout kvůli stromům, protože v některejch místech by se zastavovalo hodně těžko.
+
+Nejtěžší místo je hned za nasedačkou, 300m peřej v pravý zatáče, najíždí se vlevo, potom je nutný dostat se napravo na 1m drop, odkud se pokračuje víceméně středem s vodou přes několik válců. Dalších 300m je klidnějších, potom je těžší místo v levý zatáčce, nejdřív dva menší stupně, potom cca 2m stupeň, za kterym je šupna u levýho břehu, docela to frčí.Potom následuje rozlitější jednodušší úsek, až před druhou vesnici, kde je místo se dvěma skokama (viditelný ze silnice), nejlepší jet vlevo. Hned za tim se buduje navigace, takže pozor na bordel ze stavby. Ve vesnici je 2m kolmej jez, vhodný prohlídnout předem ze silnice. Potom opět rozlitější úsek, až před vysedačkou to nabírá opět spád, končí to cca 100m dlouhou těžší peřejí s několika válcema, kterou je vhodný prohlídnout. Potom už je vysedačka, případn je možný jet o 100m dál, nicméně je nutný vylezt před mostem, za nim následuje soutěska.
+  
+\info[Otz]{23.8}{208cm Tumpen}
+\usek{Horní}
+
+Pěkná pohodová voda, je to všechno zalitný, neni se nutný vyhejbat šutrům, ale neobjevujou se ani žádný velký válce. Všechno na pohodu na oči. 25min.
+
+\info[Venter Ache]{24.8}{206cm Tumpen}
+\usek{Spodní}
+
+Nasedačka je most, u odbočky z hlavní je směrovka na parkoviště P4. Supr střední stav, všechno na pohodu, nic se nemusí drhnout přes šutry, ale nebyl to ani velkej letní stav s brutálníma válcema... První těžší místo je rozdělovák, jede se vpravo, kde to žene na skálu a dělá to takovej polštář, ideální lajna je co nejblíž šutru vlevo. Nejtěžší místo je 100m peřej mezi druhym a třetim mostem (odbočka u autobusový zastávky Bodenegg), nicméně jede se celý s vodou, v nájezdu dva válce. Pod mostem je blbý místo vlevo u skály. Těžší místo je pravá zatáčka, kde se najíždí proti skále  a dělá se tam boční válec. Nájezd kdekoliv vpravo od středu. Ještě je tam několik těžších míst, ale všude se dá v klidu zastavit a prohlídnout. První jízda s prohlíženim 1h, druhá jízda 30min.
+
+\cara
+Následuje přejezd na Isel, jedeme ze Söldenu proti proudu, což je cesta na pass 2500m (platí se 14eur), kde se přejíždí do Itálie. Nicméně v Itálii se sjede do 720m a pak se jede přes další pass 2400m, ze kterýho se sjede na cestu z Brenneru. Kus cesty po brennerstrasse, potom doleva přímo na Defereggenbach z druhý strany, což je opět přes pass cca 2300m. Ten je navíc jednosměrnej, v tomhle směru pouštěj auta mezi 30. a 45. minutou každou hodinu (semafor je u jezera). Tahle cesta opravdu neni optimální, lépe se vrátit a jet přes Brenner, nebo to objet celý přes Rakousko.
+
+\info[Defereggenbach]{25.8.}{62cm Hopfgarten}
+\usek{Standardstrecke}
+
+I za tohodle stavu pořád eště v pohodě jetelný a vůbec né nudný. Bohužel na tunel nebo wasserfallstrecke je to pořád moc.
+
+\info[Tauernbach]{25.8.}{160cm Prossegg}
+\usek{Standardstrecke}
+
+Střední voda, ale sneslo by to na pohodu i o 5 - 10cm víc. Nasedačka cca 200m nad dřevěnym mostem u vysokýho bočního vodopádu. První kilák v pohodě, potom cca 800m těžší úsek WW4-5. První místo je taková úzká škvíra s bočnim válcem, určitě prohlídnout. Jedu jako jedinej, nájezd z pravýho středu do leva, ve výsledku  průjezd úplně v pohodě. Hned potom následuje hodně kamenitá peřej v levý zatáčce, jede se středem s vodou. Potom několik peřejí a stupňů, dá se jet na oči. Poslední prudší stupeň vhodný jet spíš vpravo. Poslední těžší místo je 1m stupeň pod mostem, vhodný prohlídnout z levýho břehu nebo předem z cesty. Vysedačka kdekoliv za mostem, po cca 400m vožný lesem vylezt na parkoviště u odbočky z hlavní silnice. Nutný zastavit tady, následuje těžkej kaňon zapadanej stromama.
+
+\info[Isel]{25.8.}{280cm Lienz}
+\usek{od kataraktu do Hubenu}
+
+Spíme u řeky pod kataraktem na levym břehu, asfaltová odbočka u vesnice Feld (46.956511, 12.560980). Nasedáme těsně pod kataraktem. První peřeje trochu těžší, WW4, potom se to trochu zklidňuje. Za tohodle stavu na pohodu poježdění, na vyblbnutí, žádný nebezpečný místo. Hořejšek je čerstvě převoranej, zmizely velký kusy břehů a řeka místy teče úplně jinudy než dřív. Až na plážičku pod Hubenem dáváme za 23min. Jedeme 3 jízdy během dvou dní...
+
+
 
 
 \end{document}
