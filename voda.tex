@@ -40,6 +40,17 @@
 }
 
 
+\makeatletter
+\newcommand{\glssubsection}[1]{%
+  \@ifundefined{@glssubsection\detokenize{#1}}
+    {\protected@write\@auxout{}{\string\newglossaryentry{#1}{name=#1,description={}}}%
+     \global\@namedef{@glssubsection\detokenize{#1}}{}}{}%
+  \glsdoifexists{#1}
+    {\subsection{\texorpdfstring{\Gls{#1}}{#1}}}%
+    {\subsection{#1}}%
+}
+\makeatother
+
 \makeglossaries
 
 
@@ -654,19 +665,19 @@ Večer přejíždíme na Landquart, kde trochu hledáme spaní, ale nakonec spí
 Cesta vede přes 2 pasy, první má něco přes 2 tisíce, potom se eště musí na Furkapass, kterej má asi 2500. Cestou zabijeme většinu dne, jak kvůli pasům, tak při prohlížení úseků, který nakonec nejedeme.
 
 
-\info[Rhona]{14.8.}{$20-25m^3/s$ odhad, vyšší stav}
+\info[Rhona]{14.8.}{$23m^3/s$ Reckingen, vyšší střední stav}
 \usek[kemp Grafschaft $N46.4553836^\circ~E8.225618^\circ$]{nádraží naproti Mühlbachu $N46.411470^\circ~E8.154963^\circ$}
 
 Řeka má docela nakoupeno, jedeme navečer a celej den bylo vedro. Začátek je pohodička na rozpádlování, cestou akorát potkáváme jeden jez s větším válcem. Jede ho jenom Ježura, ale dá se to docela v pohodě. Asi 5km je řeka docela poklidná, max WW3. Potom míjíme betonový most, za kterým je vlevo sesutej svah / štěrkovna. Tady začíná mít řeka výraznější spád, za tohodle vodního stavu WW4. Následují relativně kontinuální 3km, ale není tu nic záludnýho. Akorát je potřeba znát vysedačku, lávka, kterou uvádějí kilometráže, už na vysedačce není. Navíc u vysedačky se řeka nabírá na obtížnosti a pokračuje do kaňonu WW5, takže je potřeba zastavit včas. Kaňon lehce prohlížíme z vysokýho lanovýho mostu a vypadá to fakt hezky, ale za týhle vody je to strašně nakoupený.
 
 
-\info[Lonza]{15.8.}{odhadem $15m^3/s$}
+\info[Lonza]{15.8.}{odhadem $15m^3/s$, vyšší střední}
 \usek[nad vesnicí Willer $N46.40792^\circ~E7.795144^\circ$]{na přehradě}
 
 Jedeme dopoledne, ale vody to má docela dost. Je to hodně kontinuální úsek bez vracáků, WW4. Nejtěžší místo je kousek za nasedačkou za betonovym mostem, kde je to trochu víc z kopce. Na tuhle řeku docela sedí popis z DKV. Jedeme to jinak všechno v pohodě, společně s přepádlováním přehrady asi 25 min.
 
 
-\info[Rhona]{15.8.}{$115m^3/s$ Brig}
+\info[Rhona]{15.8.}{$115m^3/s$ Brig, vysoký stav}
 \usek[kemp Grafschaft $N46.4553836^\circ~E8.225618^\circ$]{nádraží naproti Mühlbachu $N46.411470^\circ~E8.154963^\circ$}
 
 Jedeme docela big water úsek na Rhoně, je pekelný vedro a jedeme odpoledne, takže to má celkem nakoupeno. Předem ze silnice prohlížíme dvě největší peřeje, ale zbytek vypadá OK. Po nasednutí je to celý trochu větší, než se zdálo ze silnice, je to big water 4+, dvě největší peřeje jsou za 5. Peřeje kolem kempu, než se dojede k mostu, jsou docela velký, místy jsou válce, který je opravdu vhodný objet. Potom za silničním mostem následuje první velká peřej, najíždíme úplně vlevo podél břehu, hned za nájezdem jedeme těžce do prava, dole je masivní válec vlevo, kterej je potřeba minout. Reálná lajna je i těsně vlevo podél břehu, kde válec pouští - tu jede Ježura. Šuhy přenáší, my jedeme na pohodu. Po pár set metrech je druhá větší peřej, najíždíme středem, potom je potřeba je těsně kolem levýho břehu přes jazyk, kterej objíždí válec, hned potom se jede do prava, minout zatopenej šutr a potom boof přes poslední válec, kterej už je docela v pohodě. Potom následujou dva takový stupně, oba jedeme u levý strany, vpravo sou mocný válce. Potom sou pořád docela mocný peřeje, je to hodně kontinuální WW4 až do vesnice Mörell / Fillet, kde se to zklidňuje a obtížnost o stupeň klesá. Na konci vesnice je jez / přehrada, přenášíme těsně nad hranou jezu u levý strany, za větší vody bych tam ale určitě nejezdil. Zbytek až na vysedačku je docela v pohodě, asi 500m před vysedačkou je stupeň s válcem, kterej je nutný naboofnout. Je to ale označený cedulí na břehu.Vysedá se na pravý straně pod silničním mostem. Jedeme asi 2 hodiny s prohlíženim a jištěním první velký peřeje.
@@ -707,7 +718,7 @@ Jedeme se podívat na Grand Eyviu, kde potkáváme Slávoše s Pražákama. Takh
 
 
 \info[Dora Baltea]{17.8.}{vyšší stav}
-\usek[pod Inferno kaňonem $N45.703994^\circ~E7.154570^\circ$]{Chavonne$N45.702905^\circ~E7.217788^\circ$}
+\usek[pod Inferno kaňonem $N45.703994^\circ~E7.154570^\circ$]{Chavonne $N45.702905^\circ~E7.217788^\circ$}
 
 Jedeme raftovej úsek, má to docela dost vody, takže je to hezký na zablbnutí, ale nic těžkýho. Já pendluju, ale nakonec se to všem docela líbí, tak dáváme druhej run, na kterej se přidám.
 
@@ -716,7 +727,7 @@ Jedeme raftovej úsek, má to docela dost vody, takže je to hezký na zablbnut�
 Spíme u Grand Eyvii na docela hezkym místě u cesty do lomu nad vodopádem $N45.644917^\circ~E7.274043^\circ$.
 
 
-\info[Grand Eyvia]{17.8.}{střední stav, asi $33cm$ na vodočtu Cretaz}
+\info[Grand Eyvia]{18.8.}{střední stav, asi $33cm$ na vodočtu Cretaz}
 \usek[Cretaz $N45.614506^\circ, E7.341663^\circ$]{Jez $N45.644914^\circ~E7.287377^\circ$}
 
 Na nasedačce to vypadá, že to nemá moc vody, ale je to docela pohodovej střední stav. Po asi 500m se dojede do malýho kaňonu, kde jsou dvě výraznější peřeje. První je rozbitej slajdík, kterej se jede středem a pak stupeň s velkym bublákem vpravo, jede se vlevo. Pak je druhej stupeň ten se jede naopak ze středu doprava. Na konci kaňonu je vpravo jeskyně, která tvoří pekelnej sifon. Za týhle vody tam skoro nic neteče, ale za větší vody by si to chtělo dát pozor. Potom je nudnější rozlitej úsek, kterej se asi po 1km začne postupně zužovat a nabírá to spád. Je to docela hezkej úsek, nic zákeřnýho, všechno se dá jet na oči. Nejtěžší část je u konce. Za silničním mostem řeka nabere spád a je těžší, nejtěžších je posledních 300m mezi silniční galerií a vysedačkou. Je tu jeden cca 3m skok, kterej je dobrý prohlídnout, ale je v pohodě. Potom je takovej nepřehlednej úsek, kterej jedem u levý strany, jsou tu asi 2 docela solidní válce. Na konci těsně před vysedačkou jsou dva stupně s válcema. Oba se daj projet docela v pohodě, ale kousek pod nima je jez, kde de voda pod vratama, takže to chce jet opatrně. Za větší vody by tam mohly bejt poměrně solidní válce. 
@@ -730,10 +741,100 @@ Líbí se nám to, tak jedeme eště druhej run. Potom ještě jednou dáváme r
 Odpoledne dáváme přejezd směrem na Inn. Jedeme po trase Aosta - Biella - Corte - Como - St. Moritz. Cesta je to neskutečně pekelná, v Itálii je to celý jedna velká vesnice, cestou jedem asi přes milión kruháčů. Pokud bych tu měl někdy jet znovu, tak jedině po dálnici, objíždět se to rozhodně nevyplatí. Na Inn dorážíme asi v půl třetí ráno.
 
 
-\info[Inn]{13.8.}{$25m^3/s$ Tarasp}
+\info[Inn]{19.8.}{$25m^3/s$ Tarasp}
 \usek{Giarsun + Ardez}
 
 Na závěr dáváme Inny, neni žádná velká voda, ale je to zábava :) Za cestu předjíždíme 5 jinejch part, je to tu jak na Vltavě. Pak už to jenom pálíme domu, cca v 10 dojíždíme do Budějc.
+
+\akce{Čerťáky}
+\datum[22.8. - 23.8.]
+
+Dorážim až v pátek večer. V sobotu jedeme 4 jízdy, v neděli 2, protože vyrážíme do Budějc přebalit se do našeho auta a vyrážíme na Isel.
+
+\akce{Tyrolsko}
+\datum[24.8. - 30.8.]
+
+Kuba, Šuhy, Fíkuska
+
+\info[Isel]{24.8.}{$260cm$ Lienz}
+\usek{Pod kataraktem}
+
+Jedeme $3\times$ s pendlem. Je docela málo vody, ale dá se to na pohodu.
+
+
+\info[Defereggenbach]{24.8.}{$47cm$ Hopfgarten}
+\usek{Wasserfallstrecke}
+
+Voda je pro nás poměrně optimální, o moc víc bych mít nechtěl. Sice je to ze začátku trochu jebačka, ale dá se to sjet poměrně v pohodě. První drop má docela zajímavej nájezd, nejdřív takovej šikmej stupeň s válcem, kterej nás oba vypliv úplně u pravý strany. Potom je asi metrovej drop s válcem, ale oba sme ho projeli v pohodě, i když boofy nebyly ideální. Pak už následuje jenom skluzavka s kickerem a na konci parádní boof.
+
+Druhej drop najíždíme úplně zprava po šikmym stupni. Kuba jede na drop úplně zprava na střed a dává parádní boof. Já si to najíždím víc na střed a jedu to víc směrem doprava, na kickeru trochu zadrhnu o dno a místo boofu padám po špičce, ale na pohodu. Potom už dojíždíme jenom krátkej kaňonek, kde je jeden pohodovej dropík a jeden dropík s undercutem vlevo a potom už jenom dojíždíme kousek na vysedačku u mostu, kde vylejzáme vlevo na silnici.
+
+
+\info[Isel]{25.8.}{$260cm-270cm$ Lienz}
+\usek{Pod kataraktem}
+
+Jedeme zase $3\times$ s pendlem. Trochu to stoupá, ke konci je to i docela zábavný.
+
+
+\info[Isel]{25.8.}{$105cm$ Hinterbichl}
+\usek{Horní + Hinterbichl}
+
+Nasedáme na drop v Hinterbichlu u mlejna. Neni tam moc vody, ale dá se to v pohodě. Drop je asi 4-5m, nikdo netrefujeme boof moc dobře, protože na hraně neni moc vody, ale je pod tim hloubka a dáváme docela na pohodu. Horní Isel má normální střední vodu, pohodička.
+
+
+\info[Tauernbach]{26.8.}{$165cm$ Prosegg}
+\usek{Standardstrecke}
+
+Jedeme 2 jízdy s pendlem, první je poměrně málo vody, asi 155cm, ale dá se to jet docela na pohodu - já pendluju. Na druhou jízdu to docela nastoupalo, odhadem tak na 165cm. To už je v pohodě, skoro nikde z toho nečouhaj šutry a všechno je to dost na pohodu, fakt parádní poježdění. Jedeme asi 50 min.
+
+
+\info[Defereggenbach]{26.8.}{$47cm$ Hopfgarten}
+\usek{Tunnelstrecke}
+
+Odpoledne jedeme na tunel. V první větší peřeji je strom napříč celou řekou, kterej přenášíme. Potom na oči jedeme až k peřeji nad mostem, kterou prohlížíme. Jedeme přes vracák vlevo, potom dropík levej střed a poslední drop úplně vpravo kolem skály, všichni jedem na pohodu. Slajdík pod mostem je super, až ke galerii je to v pohodě. Potom jistíme a prohlížíme peřej u galerie, lajna je tam poměrně jasná, najíždíme od pravýho břehu na střed přes první drop, potom se jede střed a až do konce s vodou. Všichni jedeme docela na pohodu, jenom Šuhy zvládne zapomenout lajnu a moc neví, kudy se do toho pustit. Ale nakonec to taky dává docela v klidu. Potom prohlížíme eště konec galerie, ale tam už za týhle vody nic dramatickýho neni. Jedeme až ke druhýmu mostu, dojezd už je WW3, ale neni to ani velká šutrovačka, na pohodu. S prohlížením a jištěním jedeme 1:40hod.
+
+
+\info[Rienz]{27.8.}{standardní stav}
+\usek[Mühlbach]{Brixen}
+
+Nasedáme pod přehradou, stav je standardní, možná o maličko víc, než minule. První kilák až k nejtěžšímu kaňonu jedeme na pohodu bez většího prohlížení asi 30min. Nejtěžší místo jedeme jenom já s Kubou, oba docela na pohodu, když se dobře najede ten boof, tak už to člověka nějak vypláchne. Pokračujeme v podobnym tempu, v jednom hodně kamenitym místě se Petra hodně nepěkne zašprajcne mezi dva šutry a máčkne jí to pod vodu, naštěstí zůstane hlavou nad vodou. Po chvilce sem u ní a daří se mi jí vytáhnout. Je v pohodě, asi si pořádně neuvědomila, jak hodně blbá situace to byla. Potom už pokračujeme v poklidu až k mostu pod hradem, kde vystupuje Kuba a vrací se pro auto. My pokračujeme dál, řeka se postupně zklidňuje z WW3 na 1-2. Do Brixenu dojíždíme za 3 hodiny, jsme tam o trochu dřív, než Kuba. U hradu je to prej s lodí docela výšlap, prý je to snad lepší dojet.
+
+
+\info[Boite]{28.8.}{vyšší střední, $7-12,m^3/s$}
+\usek{Mezi přehradama}
+
+Spíme na Boite někde u vesnice San Vito $46.477352^\circ N~12.193614^\circ E$ (konec horního úseku). Ráno jedeme kaňon mezi přehradama. Trochu nám dá zabrat najít vysedačku, nakonec se rozhodneme dojet až na přehradu, neni moc dlouhá. Nevíme jakej máme stav, ale určitě víc než minimálních 5 kubíků, tak se do toho pouštíme (ale radši bez Petry). Celkem brzo zjišťujeme, že máme takovou vyšší střední vodu. První zajímavý místo je asi 2m šikmej drop s válcem, trochu v něm svíčkujeme, ale všichni to dáme docela v pohodě. Potom začíná bejt řeka trochu víc z kopce a kontinuální, neni to žádný drama, ale na zastavování tam moc prostoru neni. Hned pár set metrů pod dropem je strom přes celou řeku, kterej přenášíme zprava. Potom přijíždíme k nepřeheldnýmu zavalenýmu místu, Kuba se ho snaží prohlídnout zleva, ale moc tam nevidí (při tom mu málem odplave loď, což by byl strašnej průser). Nakonec se mi podaří vystoupit vpravo a kouknout na to, je to docela v pohodě, jedeme celý zprava. Následuje několik set metrů v parádnim úzkym kaňonu bez větších peřejí, potom je další zavalená peřej. Prohlížíme z leva. Na konci je strom, ale je dostatečně nad vodou, aby se dal podjet. Místo najíždíme zleva, potom je cca 1m drop, jedeme u pravýho břehu, hned za nim je potřeba se sbalit pod strom. Následující větší peřej je u silničního mostu, je to takovej úzkej kanál u levýho břehu. V nájezdu má poměrně masivní válec, hned za tim kouká z vody takový žebro, kolem kterýho to padá do dalšího válce. Je to jetelný, ale válce sou hodně velký a eskymovat by tam člověk určitě nechtěl, je to hodně úzký. Nakonec se neodhodláme a přenášíme. Následuje ještě cca 1km větších peřejí, ale prohlížíme už jen zběžně, je to docela přehledný. Poslední asi 1km už je jenom dojezd do přehrady, vysedáme vlevo 100m před hrází u nějakýho přítoku.
+
+Za zmínku stojí, že jsme nasedali odhadem za 7-8 kubíků a dojížděli jsme možná za 12ti. Přijde mi, že to nebylo jenom z přítoků, ale že spíš přehrada připustila. Ale těžko hádat. Rozhodně je dobrý brát to v úvahu, celej úsek je v kaňonu a výstup by byl extrémně složitej až nereálnej. Pozor je potřeba dát na stromy, bylo jich tam opravdu hodně, i když většina šla objet. Celkově bych to zhodnotil jako WW4 - 4+. Ale řeka je to super, nádhernej kaňon, neni to nijak extra těžký, mít čas, určitě bych to dal po druhý. Jeli jsme to necelý 3 hodiny.
+
+\cara
+
+Potom se jedeme podívat na Mae. Dlouho hledáme nasedačku a už je pozdě, tak to vzdáváme. Nicméně kaňon je úplně brutální, rozhodně to chci někdy jet. Nasedačka je asi 500m za lanovym mostem, je tam malá nenápadná pěšinka dolu k vodě. Nejdřív se mine dům vlevo, pak je nějakej dům vpravo a kousek za nim ta cestička odbočuje. S lodí to bude tak na hodinu, než se od parkoviště dojde k vodě.
+
+Přejíždíme na super spaní u horolezecký stěny na Ahrnbachu $46.833907^\circ N~11.940157^\circ E$
+
+
+\info[Ahrnbach]{29.8.}{$97cm$ St. Georgen}
+\usek{Schloss}
+
+Ráno jedem kouknout na horní Ahrnbach, minimum má bejt 90cm, ale je to blbost. Je to úplně suchý. Reálný minimum bych tipoval na 110cm. Jedem teda na Schloss, nemá to moc vody, ale jedeme s pendlem $2\times$. Všichni docela na pohodu, pořád je to v klidu jetelný a docela zábava. Je to sice hodně šutrovatý, ale lajna je všude a přes šutry se nemusí. Vysedáme za mostem nad jezem, dál to nemá smysl.
+
+
+\info[Reinbach]{29.8.}{nižší střední}
+\usek{Vodopády}
+
+Jedeme omrknout Reinbach, má to spíš trochu nižší vodu, ale rozhodnem se to dát. Kuba jede první, já jdu s házečkou pod třetí drop, zbytek fotí. Kuba netrefuje první drop a zastavuje nad druhym vlevo. Neni moc vody, tak je tam plno času a v klidu si přejíždí úplně do prava, aby si najel druhej drop. Pak už má dobrou lajnu, vyzvedává hodně vlevo u skály, ale na pohodu. S přehledem dává i třetí drop. Du na to já, na boof se za tohodle stavu necejtim, takže jedu spíš na jistotu. Nájezd docela v pohodě, rovnou du na druhej drop, dopad jak nic, ale hned cejtim mokro na nohách a je mi to jasný - přišel sem o šprajdu. Vyplivne mě to dobře u pravýho břehu, vyzvedám hned, ještě se zkoušim chytit do malýho vracáku, kde by se dalo vylzet. Ale mám půl lodi vody a nestihnu to a zpátky proti proudu už to nejde. Je mi to celkem jasný, du ven, nechám odplavat loď a když je volno, Kuba mi ukáže a jedu poslední drop po prdeli. Je to celkem v klidu, válec podplavu, ale odplavat se odtamtut nedá, je tam docela silnej vracák. Kuba mě po chvilce vytáhne na házečce. 
+
+Bohužel sem při tom zahodil pádlo, to chytlo dole levou lajnu a odplavalo, ale jinak všechno v pohodě. Jdem pak po turistický stezce, ale ta de úplně mimo vodu až dolu k vodopádům. Pak jdu ještě sám kus podél vody pod dva slajdy a vidim něco podezřelýho, ale nejsem si vůbec jistej. Sem tam sám, tak se radši vrátim k autu pro házečku a abych tam nelez sám. Všímám si, že znatelně víc vody, než když sme jeli. Když se vrátíme, nejsme si jistý, jestli je to pádlo, ale chci tam jít zkusit dojít. V tu chvíli vidíme, jak ho najednou veme voda - sice už je jasný, že to bylo moje pádlo - ale zároveň plave do prdele. Možná během 10ti - 15ti minut nastoupala voda fakt hodně (15 - 20cm), vodopády sou najednou úplně masivní, je na to potřeba dát pozor. Pádlo je v hajzlu, byla to velká smůla, že sem pro něj nedošel hned, když sem tam byl sám nebo že sme tam nebyli o 10min dřív, v pohodě bych pro něj došel... Příště ho nesmim vůbec pouštět, byla to trochu blbost.
+
+
+\info[Isel]{30.8.}{$260cm$ Lienz}
+\usek{Pod kataraktem}
+
+Jedeme asi $3\times$ s pendlem a vyrážíme domu.
+
+\cara
+Schytáme ještě super objížďku kolem Zell am See (neni značená a musíme se vrátit do Mittersilu a jet přes Kitzbühl - wtf) ale domu dorážíme docela rozumně. Najeli sme cca jenom 1700km a vyšlo nás to na závratných 2300 na osobu. Super akce.
 
 
 \end{document}.
